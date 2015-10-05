@@ -1,7 +1,7 @@
 # tport
 tport is short for tunnel port. A CLI utility for port forwarding over SSH. Sign in once to your server, forward as many ports in either direction as you need.
 
-# Usage
+## Usage
 tport v0.1 by Jason Chu (1lann)
 
 First, connect with
@@ -33,5 +33,5 @@ Disconnect, close all tunnels, and quit the daemon.
 tport dc/disconnect/logout
 ```
 
-# License
+## License
 Licensed under the MIT License. See /LICENSE.
