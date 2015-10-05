@@ -5,22 +5,33 @@ tport is short for tunnel port. A CLI utility for port forwarding over SSH. Sign
 tport v0.1 by Jason Chu (1lann)
 
 First, connect with
-    tport user@host
+```
+tport user@host
+```
 
 For tunnels from the local host, to the remote host.
-    tport remote remoteport [localport]
+```
+tport remote remoteport [localport]
+```
 For tunnels from the remote host, to the local host.
-    tport local localport [remoteport]
-
-    tport close remote localport
-    tport close local remoteport
-    tport close remote/local all
-    tport close all
+```
+tport local localport [remoteport]
+```
+```
+tport close remote localport
+tport close local remoteport
+tport close remote/local all
+tport close all
+```
 
 List all the open tunnels.
-    tport list
+```
+tport list
+```
 Disconnect, close all tunnels, and quit the daemon.
-    tport dc/disconnect/logout
+```
+tport dc/disconnect/logout
+```
 
 # License
 Licensed under the MIT License. See /LICENSE.
