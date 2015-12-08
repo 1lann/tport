@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/hex"
 	"fmt"
-	"github.com/gcmurphy/getpass"
+	"github.com/howeyc/gopass"
 	"net"
 	"os"
 	"strconv"
@@ -85,11 +85,8 @@ func main() {
 				var password string
 
 				if len(os.Args) < 3 {
-					password, err = getpass.GetPassWithOptions(parts[0]+"@"+parts[1]+
-						"'s password: ", 0, getpass.DefaultMaxPass)
-					if err != nil {
-						return
-					}
+					fmt.Printf(parts[0] + "@" + parts[1] + "'s password: ")
+					password = string(gopass.GetPasswd())
 				} else {
 					passwordData, err := hex.DecodeString(os.Args[2])
 					if err != nil {
@@ -98,6 +95,11 @@ func main() {
 					}
 
 					password = string(passwordData)
+				}
+
+				if len(password) == 0 {
+					fmt.Println("Cancelled.")
+					return
 				}
 
 				fmt.Println("Connecting as " + parts[0] + "@" + parts[1] + "...")
