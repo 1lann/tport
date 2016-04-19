@@ -86,7 +86,8 @@ func main() {
 
 				if len(os.Args) < 3 {
 					fmt.Printf(parts[0] + "@" + parts[1] + "'s password: ")
-					password = string(gopass.GetPasswd())
+					passBytes, _ := gopass.GetPasswd()
+					password = string(passBytes)
 				} else {
 					passwordData, err := hex.DecodeString(os.Args[2])
 					if err != nil {
